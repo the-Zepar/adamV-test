@@ -18,7 +18,6 @@ function Header() {
   const { cart } = useCart();
   const { toggleTheme } = useTheme();
   const { isLoggedIn } = useAuth();
-  const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -26,10 +25,6 @@ function Header() {
   // const [searchQuery, setSearchQuery] = useState("");
   // const [searchResults, setSearchResults] = useState<Product[]>([]);
   // const searchPopupRef = useRef(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
