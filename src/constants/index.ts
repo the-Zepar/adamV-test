@@ -1,4 +1,13 @@
-import { Target, Compass, Eye, Heart } from "lucide-react";
+import {
+  Leaf,
+  Tractor,
+  Recycle,
+  Sprout,
+  Target,
+  Compass,
+  Eye,
+  Heart,
+} from "lucide-react";
 
 const products = [
   {
@@ -8,7 +17,7 @@ const products = [
       "Our flagship product, rich in nutrients and beneficial microorganisms.",
     price: 29.99,
     inStock: true,
-    image: "/placeholder.svg?height=600&width=800&text=Premium+Vermicompost",
+    image: "https://picsum.photos/800/600",
   },
   {
     id: 2,
@@ -16,7 +25,7 @@ const products = [
     description: "Liquid gold for your plants, perfect for foliar application.",
     price: 19.99,
     inStock: true,
-    image: "/placeholder.svg?height=600&width=800&text=Vermicompost+Tea",
+    image: "https://picsum.photos/800/600",
   },
   {
     id: 3,
@@ -25,7 +34,7 @@ const products = [
       "Pure, unadulterated worm castings for ultimate soil amendment.",
     price: 24.99,
     inStock: true,
-    image: "/placeholder.svg?height=600&width=800&text=Worm+Castings",
+    image: "https://picsum.photos/800/600",
   },
   {
     id: 4,
@@ -34,8 +43,7 @@ const products = [
       "A perfect mix of vermicompost and organic materials for all-purpose use.",
     price: 34.99,
     inStock: true,
-    image:
-      "/placeholder.svg?height=600&width=800&text=Organic+Fertilizer+Blend",
+    image: "https://picsum.photos/800/600",
   },
 ];
 const aboutText = [
@@ -84,4 +92,56 @@ const testimonials = [
       "The quality and consistency of Adam's VP products are unmatched in the industry.",
   },
 ];
-export { products, aboutText, testimonials };
+
+const aboutUs = [
+  {
+    icon: Target,
+    title: "Our Objectives",
+    description:
+      "To provide sustainable, organic solutions for soil enrichment and crop enhancement, promoting eco-friendly agricultural practices.",
+  },
+  {
+    icon: Compass,
+    title: "Our Mission",
+    description:
+      "To revolutionize agriculture through innovative vermicomposting techniques, empowering farmers with natural, high-yield solutions.",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description:
+      "A world where organic waste is transformed into valuable resources, creating a circular economy in agriculture and ensuring food security.",
+  },
+  {
+    icon: Heart,
+    title: "Our Values",
+    description:
+      "Sustainability, innovation, integrity, and commitment to the well-being of farmers, consumers, and the environment.",
+  },
+];
+
+const whyUs = [
+  {
+    icon: Leaf,
+    title: "100% Organic",
+    description:
+      "Our compost is made from natural materials, free from harmful chemicals.",
+  },
+  {
+    icon: Recycle,
+    title: "Sustainable Process",
+    description:
+      "We utilize organic waste, contributing to a circular economy.",
+  },
+  {
+    icon: Sprout,
+    title: "Enhanced Growth",
+    description: "Proven to increase crop yields and improve soil health.",
+  },
+  {
+    icon: Tractor,
+    title: "Farmer-Friendly",
+    description: "Easy to apply and compatible with modern farming practices.",
+  },
+];
+export { products, aboutText, testimonials, aboutUs, whyUs };

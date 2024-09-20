@@ -1,26 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-
 import { Card, CardContent } from "@/components/ui/card";
-
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { testimonials, products } from "@/constants";
-
-import {
-  Leaf,
-  Tractor,
-  Recycle,
-  Sprout,
-  Target,
-  Compass,
-  Eye,
-  Heart,
-} from "lucide-react";
-
+import { testimonials, products, aboutUs, whyUs } from "@/constants";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const [mounted, setMounted] = useState(false);
+  const navigate = useNavigate();
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentProduct, setCurrentProduct] = useState(0);
@@ -29,10 +16,6 @@ function Home() {
   const aboutRef = useRef(null);
   const whyChooseRef = useRef(null);
   const testimonialsRef = useRef(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const autoSlideInterval = setInterval(() => {
@@ -62,7 +45,7 @@ function Home() {
 
   return (
     <main className="flex-1">
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full py-6 md:py-8 lg:py-12 xl:py-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +65,10 @@ function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button className="bg-green-600/90 hover:bg-green-700/90 text-white px-6 py-3 rounded-full text-lg shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm">
+                <Button
+                  className="bg-green-600/90 hover:bg-green-700/90 text-white px-6 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm"
+                  onClick={() => navigate("/products")}
+                >
                   Explore Our Products
                 </Button>
               </div>
@@ -92,7 +78,7 @@ function Home() {
                 alt="Vermicomposting Process"
                 className="aspect-[4/3] overflow-hidden rounded-xl object-cover object-center shadow-lg"
                 height="550"
-                src="/placeholder.svg?height=550&width=750&text=Vermicomposting+Process"
+                src="https://picsum.photos/750/550"
                 width="750"
               />
             </div>
@@ -141,8 +127,15 @@ function Home() {
                               <span className="text-2xl font-bold text-green-600">
                                 {product.price}
                               </span>
-                              <Button className="bg-green-600/90 hover:bg-green-700/90 text-white px-3 py-1 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm">
-                                Add to Cart
+                              <Button
+                                className="bg-green-600/90 hover:bg-green-700/90 text-white px-3 py-1 rounded-full text-sm shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm"
+                                onClick={() =>
+                                  navigate("/product", {
+                                    state: product,
+                                  })
+                                }
+                              >
+                                View Product
                               </Button>
                             </div>
                           </div>
@@ -155,13 +148,13 @@ function Home() {
             </div>
             <Button
               onClick={prevProduct}
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronLeftIcon className="h-6 w-6" />
             </Button>
             <Button
               onClick={nextProduct}
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronRightIcon className="h-6 w-6" />
             </Button>
@@ -180,32 +173,7 @@ function Home() {
             About Us
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                icon: Target,
-                title: "Our Objectives",
-                description:
-                  "To provide sustainable, organic solutions for soil enrichment and crop enhancement, promoting eco-friendly agricultural practices.",
-              },
-              {
-                icon: Compass,
-                title: "Our Mission",
-                description:
-                  "To revolutionize agriculture through innovative vermicomposting techniques, empowering farmers with natural, high-yield solutions.",
-              },
-              {
-                icon: Eye,
-                title: "Our Vision",
-                description:
-                  "A world where organic waste is transformed into valuable resources, creating a circular economy in agriculture and ensuring food security.",
-              },
-              {
-                icon: Heart,
-                title: "Our Values",
-                description:
-                  "Sustainability, innovation, integrity, and commitment to the well-being of farmers, consumers, and the environment.",
-              },
-            ].map((item, index) => (
+            {aboutUs.map((item, index) => (
               <Card
                 key={index}
                 className="flex flex-col items-center text-center transition-transform hover:scale-105 cursor-pointer bg-white/80 dark:bg-gray-800/80 shadow-lg hover:shadow-xl backdrop-blur-sm"
@@ -236,32 +204,7 @@ function Home() {
             Why Choose Adam's VP?
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Leaf,
-                title: "100% Organic",
-                description:
-                  "Our compost is made from natural materials, free from harmful chemicals.",
-              },
-              {
-                icon: Recycle,
-                title: "Sustainable Process",
-                description:
-                  "We utilize organic waste, contributing to a circular economy.",
-              },
-              {
-                icon: Sprout,
-                title: "Enhanced Growth",
-                description:
-                  "Proven to increase crop yields and improve soil health.",
-              },
-              {
-                icon: Tractor,
-                title: "Farmer-Friendly",
-                description:
-                  "Easy to apply and compatible with modern farming practices.",
-              },
-            ].map((item, index) => (
+            {whyUs.map((item, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center text-center transition-transform hover:scale-105 cursor-pointer bg-white/80 dark:bg-gray-700/80 p-6 rounded-lg shadow-lg hover:shadow-xl backdrop-blur-sm"
@@ -314,13 +257,13 @@ function Home() {
             </div>
             <Button
               onClick={prevTestimonial}
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-6 w-6 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronLeftIcon className="h-4 w-4" />
             </Button>
             <Button
               onClick={nextTestimonial}
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-6 w-6 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronRightIcon className="h-4 w-4" />
             </Button>
@@ -336,7 +279,10 @@ function Home() {
             Join thousands of satisfied farmers and gardeners who have
             experienced the Adam's VP difference.
           </p>
-          <Button className="bg-green-600/90 hover:bg-green-700/90 text-white px-6 py-3 rounded-full text-lg shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm">
+          <Button
+            className="bg-green-600/90 hover:bg-green-700/90 text-white px-6 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm"
+            onClick={() => navigate("/sign-up")}
+          >
             Get Started Today
           </Button>
         </div>

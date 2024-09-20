@@ -7,7 +7,7 @@ export const useAuth = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // setIsLoggedIn(isAuthenticated());
+    setIsLoggedIn(isAuthenticated());
   }, []);
 
   const login = async (email: string, password: string) => {

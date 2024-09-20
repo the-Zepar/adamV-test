@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 import { useCart } from "@/context/CartProvider";
+import PayButton from "@/components/Pay";
 
 export default function Cart() {
   const { isLoggedIn } = useAuth();
@@ -100,9 +101,7 @@ export default function Cart() {
               </div>
             </div>
             <div className="space-y-4">
-              <Button className="w-full btn-primary">
-                Proceed to Checkout
-              </Button>
+              <PayButton amount={totalPrice + 10.0 + totalPrice * 0.15} />
             </div>
           </div>
         </div>
