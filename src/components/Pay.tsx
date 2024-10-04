@@ -8,7 +8,11 @@ function PayButton({ amount }: { amount: number }) {
         name="public_key"
         value="CHAPUBK_TEST-DenAJk4czAzRnmS9WDHl7X5bLEVvGHMo"
       />
-      <input type="hidden" name="tx_ref" value="negade-tx-12345678ssscvcv9" />
+      <input
+        type="hidden"
+        name="tx_ref"
+        value={`negade-tx-${(Math.random() + 1).toString(36).substring(7)}`}
+      />
       <input type="hidden" name="amount" value={amount} />
       <input type="hidden" name="currency" value="ETB" />
       <input type="hidden" name="email" value="tsagi265@gmail.com" />

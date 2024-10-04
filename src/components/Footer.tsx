@@ -16,9 +16,9 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-2">Contact</h3>
-            <p className="text-sm">123 Compost Lane, Green City, EC 12345</p>
-            <p className="text-sm">Phone: (123) 456-7890</p>
-            <p className="text-sm">Email: info@adamsvp.com</p>
+            <p className="text-sm">123 Compost Lane, A.A, Ethiopia</p>
+            <p className="text-sm">Phone: (251) 1334-3663/(251) 0046-0923</p>
+            <p className="text-sm">Email: temebekele021@gmail.com</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-2">Quick Links</h3>

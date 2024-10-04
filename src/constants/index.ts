@@ -8,6 +8,8 @@ import {
   Eye,
   Heart,
 } from "lucide-react";
+import placeholder from "../assets/placeholder.jpg";
+import placeholder2 from "../assets/placeholder2.jpg";
 
 const products = [
   {
@@ -17,7 +19,7 @@ const products = [
       "Our flagship product, rich in nutrients and beneficial microorganisms.",
     price: 29.99,
     inStock: true,
-    image: "https://picsum.photos/800/600",
+    image: placeholder,
   },
   {
     id: 2,
@@ -25,7 +27,7 @@ const products = [
     description: "Liquid gold for your plants, perfect for foliar application.",
     price: 19.99,
     inStock: true,
-    image: "https://picsum.photos/800/600",
+    image: placeholder2,
   },
   {
     id: 3,
@@ -34,7 +36,7 @@ const products = [
       "Pure, unadulterated worm castings for ultimate soil amendment.",
     price: 24.99,
     inStock: true,
-    image: "https://picsum.photos/800/600",
+    image: placeholder,
   },
   {
     id: 4,
@@ -43,7 +45,7 @@ const products = [
       "A perfect mix of vermicompost and organic materials for all-purpose use.",
     price: 34.99,
     inStock: true,
-    image: "https://picsum.photos/800/600",
+    image: placeholder2,
   },
 ];
 const aboutText = [

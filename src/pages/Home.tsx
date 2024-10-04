@@ -5,6 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { testimonials, products, aboutUs, whyUs } from "@/constants";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import placeholder from "../assets/placeholder.jpg";
 
 function Home() {
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ function Home() {
                 alt="Vermicomposting Process"
                 className="aspect-[4/3] overflow-hidden rounded-xl object-cover object-center shadow-lg"
                 height="550"
-                src="https://picsum.photos/750/550"
+                src={placeholder}
                 width="750"
               />
             </div>
