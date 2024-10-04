@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
+import logo from "../assets/logo.jpg";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { MoonIcon, SunIcon, MenuIcon } from "lucide-react";
-import { Leaf, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartProvider";
 import { useAuth } from "@/hooks/useAuth";
@@ -92,11 +94,8 @@ function Header() {
           }`}
         >
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
-              <Leaf className="h-6 w-6 text-green-600" />
-              <span className="font-bold whitespace-nowrap text-lg">
-                Adam's VP
-              </span>
+            <Link to="/" className=" ">
+              <img src={logo} width={60} height={60} />
             </Link>
             <nav className="hidden md:flex items-center space-x-4 text-sm font-medium">
               <Link
