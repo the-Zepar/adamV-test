@@ -92,13 +92,13 @@ export default function Products() {
             </div>
             <Button
               onClick={prevProduct}
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-200/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronLeftIcon className="h-6 w-6" />
             </Button>
             <Button
               onClick={nextProduct}
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-200/80 p-0 h-8 w-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow backdrop-blur-sm text-black dark:text-black"
             >
               <ChevronRightIcon className="h-6 w-6" />
             </Button>
